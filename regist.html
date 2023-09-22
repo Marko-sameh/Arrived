@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="content/css/main/style.css">
+
+ 
+<style>
+    body{
+        overflow-x: hidden;
+    }
+    .sec-img{
+        background-color: #0099ff;
+        padding: 0;
+      height: 85%;
+    }
+    .sec-img img{
+      width: 100%;
+      opacity: 0.9;
+      height: 100%;
+    }
+    .sec-con{
+      margin-top: 100px;
+    }
+@media (max-width: 991px) {
+  .sec-img{
+display: none;
+    }
+ #form {
+  background: url(https://ucarecdn.com/ca2ef0a3-9ff6-4688-ab9f-b21f2a6ca37c/Services.jpeg) right #0099ff;
+  padding-top:50px !important;
+ }
+ .sec-con{
+      margin-top: 70px;
+    }
+    #form {
+  padding: 15px 40px !important;
+    }
+}
+ #form {
+  /* color: #0099ff; */
+  border-radius: 5px;
+  padding: 40px;
+
+}
+ #form p {
+  font-size: 0.9em;
+}
+ #form button {
+  width: 100%;
+  text-align: center;
+  color: #009edf;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: aliceblue;
+}
+  .form-group {
+  margin: 15px auto;
+}
+  .form-group label {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+ .input-group {
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+}
+ .input-group-addon,input[type="text"] {
+  border: none !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 5px;
+}
+ .input-group input {
+  padding-left: 10px;
+}
+ .input-group i {
+  color: #009edf;
+}
+  .form-group input {
+  padding: 3px;
+  width: 100%;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+/* end form */
+.scro-rel{
+  background-color: #0099ff !important;
+  color: white !important ;
+}
+</style>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js" integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>    
+
+<body style="cursor: url('content/assest/Windows-11-blue.cur'), auto">    
+    <nav class="navbar navbar-expand-lg position-fixed w-100 opacity-70 z-3 scrolnav top-0">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" style="height: 62px; overflow: hidden;">
+            <img height="70" src="https://seeklogo.com/images/B/blue-way-transportation-logo-DE32785077-seeklogo.com.png" alt="logo img" />
+            Arrived
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+          </button>
+          <div class="collapse navbar-collapse mx-5" id="navbarScroll">
+            <ul class="navbar-nav m-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href='index.html'>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About.html ">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Book.html">Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <div class="nav-inp me-2">
+                <div class="input-group">
+                  <input type="search" class="form-control" placeholder="search" aria-label="search"
+                    aria-describedby="button-addon2" />
+                  <button class="btn btn-outline-light" type="button" id="button-addon2">
+                    <i class="uil uil-search"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-outline-light nav-btn ml-2" type="button">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container shadow-lg mb-5 bg-body-tertiary rounded sec-con" >
+    <div class="row ">
+    <div class="col-xl-3 col-12 "id="form">
+        <!-- form  -->
+      <form >
+       
+          <div id="add-choose">
+            
+             <label for="name">Name</label>
+             <div class="input-group mb-1" style="z-index: 1;">
+              <span class="input-group-text"><i class="uil uil-user"></i>  </span>
+              <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+            </div>
+      
+              <label for="Age">Age:</label>
+              <div class="input-group mb-1">
+                <span class="input-group-text"><i class="uil uil-list-ol"></i>  </span>
+                <input class="form-control" type="number" id="Age" placeholder="Enter Your Age" required>
+              </div>
+
+              <label>Gender: </label>    
+              <div class="input-group mb-1" style="box-shadow: none;">
+               <div class="form-check form-check-inline">
+                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
+                   <label class="form-check-label" for="inlineRadio1">Male</label>
+                 </div>
+                 <div class="form-check form-check-inline">
+                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
+                   <label class="form-check-label" for="inlineRadio2">Female</label>
+                 </div>
+             </div>
+
+             <label for="email">Email:</label>
+                <div class="input-group mb-1">
+                  <span class="input-group-text"><i class="uil uil-envelope"></i> </span>
+                  <input class="form-control" type="email" id="email" placeholder="Enter Your Email" required> 
+                </div>
+          
+             <label for="phone">Phone:</label>
+             <div class="input-group mb-1">
+              <span class="input-group-text"><i class="uil uil-dialpad-alt"></i>  </span>
+              <input class="form-control" type="number" id="Phone" placeholder="Enter Your Number" required>
+            </div>
+      
+            <label for="from">Address:</label>
+            <div class="input-group mb-1">
+             <span class="input-group-text"><i class="uil uil-location-pin-alt"></i>  </span>
+             <input type="text" class="form-control" id="from" placeholder="Enter Your Addres" required>
+           </div>
+          
+             <label>product: </label>           
+             <div class="input-group mb-1" >
+              <span class="input-group-text"><i class="uil uil-align-center-v"></i></span>
+            <select class="form-select" aria-label="select example" id="f-selec">
+                <option selected>select</option>    
+                <option value="private plane">private plane</option>    
+                <option value="private cargo ships">private cargo ships</option>    
+                <option value="private ship">private ship</option>    
+                <option value="private car">private car</option>   
+                <option value="Special cargo trailer">Special cargo trailer</option>   
+                <option value="private bike">private bike</option>   
+                <option value="warehouse">warehouse</option>   
+              </select>
+            </div>    
+            
+            </div>
+          
+            <p id="demo" style="color: red; font-size: large;"></p>
+          <button type="button" class="btn" id="form-btn1">Show Receipt</button>
+        </form>
+      
+        <!-- end form  -->
+      </div>
+      <div class="col-xl-9 sec-img ">
+        <img src="https://ucarecdn.com/ca2ef0a3-9ff6-4688-ab9f-b21f2a6ca37c/Services.jpeg" alt="">
+    </div>
+    </div>
+  </div>
+
+      <!-- sec 10 -->
+  <section id="Contact">
+    <div class="container mt-5">
+      <h2 class="dash-sty-rental text-center">
+        Contact US
+      </h2>
+      <div class="
+                    row
+                    justify-content-center
+                    align-items-center
+                    row-cols-1 row-cols-sm-2 row-cols-md-3
+                    gy-4
+                  ">
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-mobile-android"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Phone Number</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="tel:+201068268354">
+              (+20)-1068268354
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 ">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-location-arrow"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder title-font">
+              Address
+            </h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none"
+              href="https://www.google.com/maps?ll=30.038854,31.209204&amp;z=15&amp;t=m&amp;hl=en&amp;gl=EG&amp;mapclient=embed&amp;q=Al+Doqi+Dokki+Giza+Governorate"
+              target="_blank">
+              35 Al-Doky Street,<br>
+              5th floor, Doky, Giza</a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-envelope-open"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Email Address</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="mailto:info@eraasoft.com" target="_blank">
+              info@eraasoft.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-lg-2 mt-5 align-items-center gy-4">
+        <div class="col-xl-6 col-12">
+          <h2 class="text-center text-md-start title-font fw-bolder">
+            Get In Touch
+          </h2>
+          <p class="mb-4 fs-5 fst-italic">
+            We are welcome to recieve your questions &amp; suggestions and our support team are ready
+            to help you.
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label visually-hidden">Name :</label>
+              <input type="text" class="form-control form-control-lg fst-italic" id="name" placeholder="Full Name.">
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label visually-hidden">User Email:</label>
+              <input type="email" class="form-control form-control-lg fst-italic" id="email"
+                placeholder="Email Address.">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label visually-hidden">Phone Number:</label>
+
+              <input type="tel" class="form-control form-control-lg fst-italic" id="phone" placeholder="Phone Number.">
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label visually-hidden">Message:</label>
+
+              <textarea type="tel" class="form-control form-control-lg fst-italic" id="message"
+                placeholder="Leave your message..."></textarea>
+            </div>
+
+            <button class="
+                          d-block
+                          w-50
+                          mx-auto
+                          btn btn-lg 
+                          text-uppercase text-light
+                          form-btn
+                        " type="submit">
+              submit now
+            </button>
+          </form>
+        </div>
+        <div class="col-xl-6 col-12">
+          <iframe class="
+                        contact__map
+                        shadow-lg
+                         border-4
+                         rounded-3
+                      "
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6038952537!2d31.328505268401845!3d30.059618470532715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1646814974310!5m2!1sar!2seg"
+             allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- end sec 10 -->
+
+  <!--#SECTION: Main END-->
+
+  <!--#SECTION: Footer Start-->
+  <footer class="py-3 container">
+
+      <div class=" flex-column flex-md-row d-flex justify-content-between  align-items-center">
+        <p class="mb-2 mb-md-0 fw-bold">
+          <span style="font-size: 30px; color: black;">©</span>2023 by MARKO. All rights reserved.
+        </p>
+
+        <div class="d-flex">
+          <img src="content/assest/sory.jpg" width="50" height="50" alt="marko pic" style="border-radius: 50%;">
+          <a class="social-icons__item__link" href="https://www.facebook.com/profile.php?id=100011002320781&mibextid=ZbWKwL" target="_blank">
+            <i class="uil uil-facebook-f"></i>
+          </a>
+  
+          <a class="social-icons__item__link" href="https://markosamh28@gmail.com" target="_blank">
+            <i class="uil uil-google"></i>
+          </a>
+  
+          <a class="social-icons__item__link" href="" target="_blank">
+            <i class="uil uil-twitter-alt"></i>
+          </a>
+          
+          <a class="social-icons__item__link" href="https://www.linkedin.com/in/marko-sameh-9971b6244" target="_blank">
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+        </div>
+      </div>
+  </footer>
+  <!--#SECTION: Footer END-->
+ <script>
+     $(document).ready(function () {
+      $(".nav-btn").click(function () { 
+    $(".nav-inp").toggle(600);
+    
+});
+     $("#form-btn1").click(function (e) { 
+         if($("#name").val()==""||$("#Age").val()==""||$("#email").val()==""||$("#Phone").val()==""){
+         $("#demo").append("You Must Enter All Date");
+         }else{
+         $("#form-btn1").append(`<i class="uil uil-check"></i>`);
+         $("#form-btn1").addClass("scro-rel");
+        }
+});
+
+$("#f-selec").change(function () { 
+  if ($("#f-selec").val()=="warehouse") {
+  $("#add-choose").append(`
+            <label>Size: </label>           
+             <div class="input-group mb-1" id="add-choose">
+              <span class="input-group-text"><i class="uil uil-align-center-v"></i></span>
+              <select class="form-select" aria-label="select example">
+                <!-- <option selected>Open this select menu</option> -->
+                <option selected>select</option>    
+                <option value="20000">20000 Square Meter</option>    
+                <option value="18000">18000 Square Meter</option>    
+                <option value="15000">15000 Square Meter</option>    
+                <option value="10000">10000 Square Meter</option>   
+                <option value="5000">5000 Square Meter</option>   
+                <option value="2000">2000 Square Meter</option>   
+              </select>
+            </div>    
+  `);
+}
+});
+
+});
+      </script>
+  
+</body>    
+</html>  
+
+
+

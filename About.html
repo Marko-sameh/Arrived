@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- logo -->
+  <link rel="shortcut icon"
+    href="https://ucarecdn.com/e0940b7f-8273-4e19-a570-28dc1d3d9987/bluewaytransportationlogo.png" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="content/css/vindors/bootstrap.min.css" />
+  <!-- unicons css -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <!-- fancybox css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <!-- swiper css -->
+  <link rel="stylesheet" href="content/css/vindors/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="content/css/main/style.css" />
+
+  <title>About</title>
+
+  <style>
+    .train-bg {
+      position: relative;
+      height: 80vh;
+    }
+
+    .train-bg img {
+      filter: brightness(0.6);
+    }
+
+    .tex-sty {
+      position: relative;
+      top: -200px;
+      margin: 0 33%;
+      color: white;
+      text-shadow: 1px 7px 5px black;
+      text-align: center;
+
+    }
+
+    @media (max-width: 991px) {
+
+      .tex-sty {
+        margin: 0 15%;
+      }
+
+      .our-mi-pro-sec {
+        margin: 30% 0 !important;
+      }
+
+      .main-div {
+        margin: 15% 5% !important;
+      }
+    }
+
+    /* sec 1 */
+    .main-div {
+      margin: 5% 10%;
+    }
+
+    .com-pro-im {
+      /* background-color: #99d6ff; */
+      padding: 0;
+    }
+
+    .com-pro-im img {
+      /* filter: opacity(.9); */
+      width: 100%;
+      height: 100%;
+      border-radius: 10%;
+    }
+
+    /* end sec 1 */
+    /* sec 2 */
+    .our-mi-pro-sec {
+      margin: 10% 0;
+    }
+
+    .our-mi-pro-sec i {
+      color: #99d6ff;
+    }
+
+    /* end sec 2 */
+    /* sec 3 */
+    .fast-sec {
+      margin: 5% 0;
+    }
+
+    .fast-sec img {
+      width: 100%;
+    }
+
+    .fast-sec i {
+      font-size: 80px;
+      color: #0099ff;
+      text-shadow: 1px 7px 13px black;
+
+    }
+
+    /* end sec 3 */
+    /* sec 8 */
+    .sec8 {
+      margin: 75px 200px;
+    }
+
+    .dash-sty-rental {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+
+    .dash-sty-rental::before {
+      content: "";
+      border-top: 4px solid #0d6efd;
+      border-radius: 10px;
+      position: relative;
+      width: 40px;
+      margin-bottom: 2%;
+      display: block;
+      left: 43%;
+    }
+
+    .sec8-slide {
+      /* background-color: #99d6ff; */
+      border-radius: 115% 46% 82% 5% / 34% 44% 56% 66%;
+      padding: 0;
+      width: 32%;
+    }
+
+    .sec8-slide-prg {
+      padding: 20px;
+    }
+
+    .sec8-slide img {
+      height: 171px;
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 50px 0 0 0;
+      background-color: #0099ff !important;
+    }
+
+    .sec8-slide h4 {
+      font-family: Garamond;
+    }
+
+
+
+    .sec8-slide-prg i {
+      font-size: 25px;
+      color: white;
+      position: relative;
+      left: 25%;
+      transition: 1.5s;
+    }
+
+    .sec8-mobile {
+      display: none;
+    }
+
+    .swiper-container {
+      width: 100%;
+      margin: 20px;
+    }
+
+    .swiper-slide .imgBx {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .swiper-slide .imgBx img {
+      width: 100%;
+    }
+
+    .swiper-slide .details {
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    .swiper-slide .details h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .swiper-slide .details h3 span {
+      font-size: 16px;
+      color: #f44366;
+    }
+
+    .swiper-pagination {
+      top: 90% !important;
+    }
+
+    @media (max-width: 991px) {
+      .fast-sec {
+      margin: 30% 0 !important;
+    }
+      .sec8-xl-secreen {
+        display: none;
+      }
+
+      .sec8-mobile {
+        display: block;
+      }
+
+      .sec8 {
+        margin: 0px !important;
+        position: relative;
+        overflow: hidden;
+        height: 112vh;
+      }
+
+      .sec8-slide {
+        width: 90% !important;
+      }
+
+      .swiper-slide p {
+        padding: 0 25px 10px 25px;
+      }
+    }
+
+    /* end sec 8 */
+  </style>
+</head>
+
+<body style="cursor: url('content/assest/Windows-11-blue.cur'), auto">
+
+  <header>
+    <nav class="navbar navbar-expand-lg position-fixed w-100 opacity-70 z-3 ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="height: 62px; overflow: hidden;">
+          <img height="70" src="https://seeklogo.com/images/B/blue-way-transportation-logo-DE32785077-seeklogo.com.png"
+            alt="logo img" />
+          Arrived
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+        </button>
+        <div class="collapse navbar-collapse mx-5" id="navbarScroll">
+          <ul class="navbar-nav m-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href='index.html'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Book.html">Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <div class="nav-inp me-2">
+              <div class="input-group">
+                <input type="search" class="form-control" placeholder="search" aria-label="search"
+                  aria-describedby="button-addon2" />
+                <button class="btn btn-outline-light" type="button" id="button-addon2">
+                  <i class="uil uil-search"></i>
+                </button>
+              </div>
+            </div>
+            <button class="btn btn-outline-light nav-btn ml-2" type="button">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <section class="train-bg">
+      <img style="height: 80vh;" src="https://ucarecdn.com/7adfa7ea-8800-4dc7-a640-8c1e01357151/Aboutusbag.jpeg"
+        class="d-block w-100" alt="..." style="height: 400px;" />
+      <div class="tex-sty">
+        <h5>About Us</h5>
+        <p>
+          Some representative placeholder content for the first slide.
+        </p>
+      </div>
+    </section>
+  </header>
+
+
+  <div class="main-div">
+    <!-- sec 1 -->
+    <section class="row gap-5">
+      <div class="col-xl-6 col-12">
+        <h1 class="dash-sty">COMPANY PROFILE</h1>
+        <p>
+          A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy
+          with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss
+          of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil
+          existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment;
+          and yet I feel that I never was a greater artist than now.
+        </p>
+        <p>
+          I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand
+          unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar
+          with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who
+          formed us in his own image, and the breath.
+        </p>
+      </div>
+      <div class="col-xl-5 col-12 com-pro-im">
+        <img src="https://ucarecdn.com/aadd2f0e-ae5b-46a4-9d87-c7854d0d4d5f/comproabout.jpeg" alt="COMPANY PROFILE pic">
+      </div>
+    </section>
+    <!-- end sec 1 -->
+
+    <!-- sec 2 -->
+    <section class="row our-mi-pro-sec gap-5  ">
+      <div class="col-xl-5 col-12">
+        <h1 class="dash-sty">OUR MISSION</h1>
+        <p>
+          A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy
+          with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss
+          of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil
+          existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment;
+          and yet I feel that I never was a greater artist than now.
+        </p>
+      </div>
+      <div class="col-xl-6 col-12 com-pro-im">
+        <h1 class="dash-sty">OUR PROMISE</h1>
+        <p><i class="uil uil-check"></i> Providing high quality transportation services to all of our clients</p>
+        <p><i class="uil uil-check"></i> Invest in our employees to provide better service and company growth</p>
+        <p><i class="uil uil-check"></i> Worry about enviroment according to latest industry standards</p>
+        <p><i class="uil uil-check"></i> Safety as top priority in assuring safe work procedures</p>
+        <p><i class="uil uil-check"></i> Investing in technology to provide fast, acurate and cost-effective service</p>
+        <p><i class="uil uil-check"></i> Living up to highest industry standards</p>
+      </div>
+    </section>
+    <!-- end sec 2 -->
+
+    <!-- sec 3 -->
+    <section class="row fast-sec text-center">
+      <h1 class="dash-sty-rental">Our core values</h1>
+      <p>THE THING THAT MAKES US DIFFERENT</p>
+
+      <div class="col-xl-3 col-12">
+        <i class="uil uil-books"></i>
+        <h4>Always learning</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eius impedit voluptatibus sit numquam
+          dolores id tenetur.</p>
+      </div>
+      <div class="col-xl-3 col-12">
+        <i class="uil uil-bright"></i>
+        <h4>Latest Technology</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eius impedit voluptatibus sit numquam
+          dolores id tenetur.</p>
+      </div>
+      <div class="col-xl-3 col-12">
+        <i class="uil uil-shield-check"></i>
+        <h4>Safety & Quality</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eius impedit voluptatibus sit numquam
+          dolores id tenetur.</p>
+      </div>
+      <div class="col-xl-3 col-12">
+        <i class="uil uil-trees"></i>
+        <h4>Care for Environment</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eius impedit voluptatibus sit numquam
+          dolores id tenetur.</p>
+      </div>
+    </section>
+    <!-- end sec 3 -->
+  </div>
+  <!-- sec 8 -->
+  <section class="sec8" id="Book">
+    <h2 class="dash-sty-rental text-center">Our Team</h2>
+    <div class="row  sec8-xl-secreen">
+      <!-- 1 -->
+      <div class="col-3 sec8-slide my-5">
+        <div class="sec8-slide-prg">
+          <div class="card" style="width: 18rem;">
+            <img src="https://ucarecdn.com/63e00b67-94bc-44fc-8d2a-ec09efcb526d/ourwomen.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Susan Hamilton</h5>
+              <p>HR Manager, CarGo LLC</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="col-3 sec8-slide my-5">
+        <div class="sec8-slide-prg">
+          <div class="card" style="width: 18rem;">
+            <img src="https://ucarecdn.com/772e8687-54f9-4ff7-b8e3-e9eab58e3c3d/ourman.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Matt McGregor</h5>
+              <p>Founder & CEO, CarGo LLC</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="col-3 sec8-slide my-5">
+        <div class="sec8-slide-prg">
+          <div class="card" style="width: 18rem;">
+            <img src="https://ucarecdn.com/0cf307d5-6401-486c-85f1-91fe44860663/outgrandpa.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mike Smart</h5>
+              <p>Managing Director, CarGo LLC</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="swiper-container sec8-mobile">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- 1 -->
+          <div class="col-4 sec8-slide my-5">
+            <div class="sec8-slide-prg">
+              <div class="card" style="width: 18rem;">
+                <img src="https://ucarecdn.com/63e00b67-94bc-44fc-8d2a-ec09efcb526d/ourwomen.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Susan Hamilton</h5>
+                  <p>HR Manager, CarGo LLC</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <!-- 2 -->
+          <div class="col-4 sec8-slide my-5">
+            <div class="sec8-slide-prg">
+              <div class="card" style="width: 18rem;">
+                <img src="https://ucarecdn.com/772e8687-54f9-4ff7-b8e3-e9eab58e3c3d/ourman.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Matt McGregor</h5>
+                  <p>Founder & CEO, CarGo LLC</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <!-- 3 -->
+          <div class="col-4 sec8-slide my-5">
+            <div class="sec8-slide-prg">
+              <div class="card" style="width: 18rem;">
+                <img src="https://ucarecdn.com/0cf307d5-6401-486c-85f1-91fe44860663/outgrandpa.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Mike Smart</h5>
+                  <p>Managing Director, CarGo LLC</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <!-- end sec 8 -->
+
+
+
+
+
+
+  <!-- sec 10 -->
+  <section id="Contact">
+    <div class="container">
+      <h2 class="dash-sty-rental text-center">
+        Contact US
+      </h2>
+      <div class="
+                    row
+                    justify-content-center
+                    align-items-center
+                    row-cols-1 row-cols-sm-2 row-cols-md-3
+                    gy-4
+                  ">
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-mobile-android"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Phone Number</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="tel:+201068268354">
+              (+20)-1068268354
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 ">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-location-arrow"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder title-font">
+              Address
+            </h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none"
+              href="https://www.google.com/maps?ll=30.038854,31.209204&amp;z=15&amp;t=m&amp;hl=en&amp;gl=EG&amp;mapclient=embed&amp;q=Al+Doqi+Dokki+Giza+Governorate"
+              target="_blank">
+              35 Al-Doky Street,<br>
+              5th floor, Doky, Giza</a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-envelope-open"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Email Address</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="mailto:info@eraasoft.com"
+              target="_blank">
+              info@eraasoft.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-lg-2 mt-5 align-items-center gy-4">
+        <div class="col-xl-6 col-12">
+          <h2 class="text-center text-md-start title-font fw-bolder">
+            Get In Touch
+          </h2>
+          <p class="mb-4 fs-5 fst-italic">
+            We are welcome to recieve your questions &amp; suggestions and our support team are ready
+            to help you.
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label visually-hidden">Name :</label>
+              <input type="text" class="form-control form-control-lg fst-italic" id="name" placeholder="Full Name.">
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label visually-hidden">User Email:</label>
+              <input type="email" class="form-control form-control-lg fst-italic" id="email"
+                placeholder="Email Address.">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label visually-hidden">Phone Number:</label>
+
+              <input type="tel" class="form-control form-control-lg fst-italic" id="phone" placeholder="Phone Number.">
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label visually-hidden">Message:</label>
+
+              <textarea type="tel" class="form-control form-control-lg fst-italic" id="message"
+                placeholder="Leave your message..."></textarea>
+            </div>
+
+            <button class="
+                          d-block
+                          w-50
+                          mx-auto
+                          btn btn-lg 
+                          text-uppercase text-light
+                          form-btn
+                        " type="submit">
+              submit now
+            </button>
+          </form>
+        </div>
+        <div class="col-xl-6 col-12">
+          <iframe class="
+                        contact__map
+                        shadow-lg
+                         border-4
+                         rounded-3
+                      "
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6038952537!2d31.328505268401845!3d30.059618470532715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1646814974310!5m2!1sar!2seg"
+            allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end sec 10 -->
+
+  <!--#SECTION: Main END-->
+
+  <!--#SECTION: Footer Start-->
+  <footer class="py-3 container">
+
+    <div class=" flex-column flex-md-row d-flex justify-content-between  align-items-center">
+      <p class="mb-2 mb-md-0 fw-bold">
+        <span style="font-size: 30px; color: black;">©</span>2023 by MARKO. All rights reserved.
+      </p>
+
+      <div class="d-flex">
+        <img src="content/assest/sory.jpg" width="50" height="50" alt="marko pic" style="border-radius: 50%;">
+        <a class="social-icons__item__link" href="https://www.facebook.com/profile.php?id=100011002320781&mibextid=ZbWKwL" target="_blank">
+          <i class="uil uil-facebook-f"></i>
+        </a>
+
+        <a class="social-icons__item__link" href="https://markosamh28@gmail.com" target="_blank">
+          <i class="uil uil-google"></i>
+        </a>
+
+        <a class="social-icons__item__link" href="" target="_blank">
+          <i class="uil uil-twitter-alt"></i>
+        </a>
+        
+        <a class="social-icons__item__link" href="https://www.linkedin.com/in/marko-sameh-9971b6244" target="_blank">
+          <i class="uil uil-linkedin-alt"></i>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+  <!--#SECTION: Footer END-->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="content/js/vindors/jquery-3.5.1.min.js"></script>
+  <script src="content/js/vindors/bootstrap.bundle.min.js"></script>
+  <script src="content/js/vindors/swiper-bundle.min.js"></script>
+  <script src="content/js/main/main.js"></script>
+</body>
+
+</html>
