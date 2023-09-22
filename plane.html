@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Plane</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- logo -->
+    <link rel="shortcut icon" href="https://ucarecdn.com/e0940b7f-8273-4e19-a570-28dc1d3d9987/bluewaytransportationlogo.png" />
+<meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+  *, *:before, *:after {
+  box-sizing: border-box;
+}
+.dis{
+  visibility:hidden ;
+}
+html {
+  font-size: 16px;
+}
+
+
+/* scroll disign */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+  z-index: -1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #002d71;
+}
+/* end  */
+/* nav */
+.scrolnav {
+  opacity: 100% !important;
+  background-color: #0d6efd;
+  transition: 0.5s;
+  position: sticky;
+  z-index: 100;
+}
+.scrolnav a {
+  color: white !important;
+}
+.scrolnav a:hover {
+  color: black !important;
+}
+nav {
+  z-index: 10000;
+}
+
+nav img {
+  width: 60px;
+}
+nav a {
+  opacity: 100% !important;
+  color: white !important;
+    text-shadow: 2px 1px 2px blue;
+}
+nav a:hover {
+  color: #0099ff !important;
+}
+.nav-inp {
+  display: none;
+  /* transition: 1s !important; */
+}
+.nav-inp input {
+  padding: 0 10px !important;
+}
+/* end nav */
+/* sec 1 */
+.train-bg{
+  position: relative;
+  /* filter: brightness(0.6); */
+}
+.train-bg img{
+  filter: brightness(0.6);
+}
+.tex-sty{
+  position: relative;
+  top: -200px;
+  margin: 0 33%;
+  color: white;
+  text-shadow: 1px 7px 5px black;
+  text-align: center;
+
+}
+/* end sec 1 */
+.plane {
+  margin: 30px 98px;
+}
+
+.cockpit {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 5px solid #d8d8d8;
+  width: 300px;
+}
+.cockpit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  border-radius: 50%;
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+}
+.cockpit h1 {
+  width: 60%;
+  margin: 100px auto 35px auto;
+}
+.exit {
+  position: relative;
+  height: 50px;
+  /* width: 300px; */
+}
+.exit:before, .exit:after {
+  content: "EXIT";
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 2px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  display: block;
+  position: absolute;
+  background: green;
+  color: white;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.exit:before {
+  left: 0;
+}
+.exit:after {
+  right: 0;
+}
+
+.fuselage {
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+  width: 300px; 
+}
+@media (max-width: 991px) {
+  .fuselage {
+  width: 94% !important; 
+}
+  .plane {
+    margin: 0px 12px !important;
+}
+.cockpit {
+  width: 94.1%
+}
+}
+@media (min-width: 768px) and (max-width: 990px)  {
+  .fuselage {
+  width: 64% !important; 
+}
+.cockpit {
+  width: 64.1%
+}
+.plane {
+    margin: 0 14% !important;
+}
+}
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.seat {
+  display: flex;
+  flex: 0 0 14.2857142857%;
+  padding: 5px;
+  position: relative;
+}
+.seat:nth-child(3) {
+  margin-right: 14.2857142857%;
+}
+.seat input[type=hidden] {
+  position: absolute;
+  opacity: 0;
+}
+.stop {
+  background: #0099ff !important;
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  pointer-events: none;
+}
+.seat input[type=hidden]:disabled + button {
+  background: #dddddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.seat input[type=hidden]:disabled + label:after {
+  content: "X";
+  text-indent: 0;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.seat input[type=hidden]:disabled + label:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.seat button {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: #d8d8d8;
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.seat button:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+.seat label:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+/* form */
+* {
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+body #form {
+  color: white;
+  background-color: #009edf;
+  border-radius: 5px;
+  width: 400px;
+  padding: 40px;
+  margin: 150px auto;
+  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+}
+body #form p {
+  font-size: 0.9em;
+}
+body #form button {
+  width: 100%;
+  text-align: center;
+  color: #009edf;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: aliceblue;
+}
+body #form .form-group {
+  margin: 15px auto;
+}
+body #form .form-group label {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+body #form .form-group .input-group {
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  background-color: white;
+}
+body #form .form-group .input-group .input-group-addon,input[type="text"] {
+  border: none !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 5px;
+}
+body #form .form-group .input-group input {
+  padding-left: 10px;
+}
+body #form .form-group .input-group i {
+  color: #009edf;
+}
+body #form .form-group input {
+  padding: 3px;
+  width: 100%;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+/* end form */
+/* sec 10 */
+.dash-sty-rental {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.dash-sty-rental::before {
+  content: "";
+  border-top: 4px solid #0d6efd;
+  border-radius: 10px;
+  position: relative;
+  width: 40px;
+  margin-bottom: 2%;
+  display: block;
+  left: 43%;
+}
+.contact__map {
+    min-height: 450px;
+    width: 100%;
+  }
+  .icon{
+    font-size: 35px;
+    color: #002d71;
+  }
+  .social-icons__item__link {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  .social-icons__item__link i{
+    font-size: 30px;
+    color: #99d6ff;
+  }
+  .social-icons__item__link i:hover {
+    /* background-color: #0d6efd; */
+    color: blue;
+  }
+  /* sec 10 */
+  /* footer */
+  .form-btn{
+    background-color: #0099ff;
+  }
+  .form-btn:hover{
+    background-color: blue;
+  }
+  /* end footer */
+#save{
+  margin: 45% 23%;
+    width: 50%;
+}
+.rec-sty{
+  margin-left: 16%;
+  margin-bottom:5% ;
+  font-size: 28px;
+}
+.rec-sty::before{
+  content: "";
+  border-top: 4px solid #0d6efd;
+  border-radius: 10px;
+  position: relative;
+  width: 24%;
+  margin-bottom: -1%;
+  display: block;
+  left: -24.4%;
+}
+.rec-sty::after{
+  content: "";
+  border-top: 8px solid #0d6efd;
+  border-radius: 10px;
+  position: relative;
+  width: 95%;
+  margin-top: -3.9%;
+  display: block;
+  left: 10.4%;
+}
+.receipt{
+  border-left: 5px solid #0d6efd;
+  border-bottom: 5px solid #0d6efd; 
+  border-right: 5px solid #0d6efd;
+  padding: 0 50px 50px 50px;
+  margin-bottom: 130px;
+}
+#sen,#se,#s{
+  padding-right: 109px;
+    width: 35%;
+}
+#cla-a,#cla-b,#cla-c{
+  border-bottom: 1px solid #0099ff;
+}
+.summary-st{
+  margin: 60px 0 0 50%;
+    width: 50%;
+    background-color: #009edf;
+    border-radius: 26px;
+}
+.scro-sec{
+  margin: 20px 33%;
+}
+.scro-sec div{
+  border: 2px solid black;
+  border-radius: 50%;
+  text-align: center;
+  padding:  20px 10px;
+  width: 120px;
+  height: 100px;
+}
+.scro-rel{
+  background-color: #0099ff;
+  color: white;
+}
+.scro-sec p{
+  margin: 0;
+}
+.scro-sec-d::after {
+  content: "";
+  border-top: 3px dotted black;
+  position: relative;
+  width: 76%;
+    display: flex;
+    left: 116%;
+    margin-top: -22px;
+}
+
+@media (max-width: 991px) {
+  #form{
+    width: 100% !important;
+  }
+  .summary-st{
+    width: 80%;
+    margin: 60px 0 0 10%;
+  }
+  #sen, #se, #s {
+    padding-right: 74px;
+    width: 14%;
+}
+.receipt{
+  padding: 0 20px 20px 20px;
+}
+.rec-sty{
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+.rec-sty::before{
+  width: 30%;
+  left: -29.4%;
+}
+.rec-sty::after{
+  width: 77%;
+    margin-top: -15.9%;
+    left: 36.4%;
+}
+.scro-sec{
+  margin: 20px 1%;
+}
+.scro-sec div{
+  width: 105px !important;
+    height: 88px !important;
+}
+.scro-sec p{
+  font-size: 14px;
+}
+.scro-sec-d::after {
+  width: 33% !important;
+}
+}
+.choose-sec{
+  background: url(https://ucarecdn.com/ac320356-da53-45fa-8305-e72a28da5148/chooseyourseat.jpeg) no-repeat top;
+  height: 96vh;
+  border-radius: 20% !important;
+  margin: 18% 0;
+}
+.choose-sec h1,.choose-sec h3{
+  color: white;
+  margin: 50px 0;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+</head>
+<body style="cursor: url('content/assest/Windows-11-blue.cur'), auto">
+  <header style="height: 60vh;">
+    <nav class="navbar navbar-expand-lg position-fixed w-100 opacity-70 z-3 ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="height: 62px; overflow: hidden;">
+          <img height="70" src="https://seeklogo.com/images/B/blue-way-transportation-logo-DE32785077-seeklogo.com.png" alt="logo img" />
+          Arrived
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+        </button>
+        <div class="collapse navbar-collapse mx-5" id="navbarScroll">
+          <ul class="navbar-nav m-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href='index.html'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Book.html">Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <div class="nav-inp me-2">
+              <div class="input-group">
+                <input type="search" class="form-control" placeholder="search" aria-label="search"
+                  aria-describedby="button-addon2" />
+                <button class="btn btn-outline-light" type="button" id="button-addon2">
+                  <i class="uil uil-search"></i>
+                </button>
+              </div>
+            </div>
+            <button class="btn btn-outline-light nav-btn ml-2" type="button">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  <section class="train-bg">
+        <img src="https://ucarecdn.com/e6c5ed2e-c825-4d78-bbb6-022edb37ec14/planeblueair.jpg" class="d-block w-100" alt="..." style="height: 55vh;" />
+      <div class="tex-sty">
+        <h5>Plane</h5>
+        <p>
+          Some representative placeholder content for the first slide.
+        </p>
+      </div>
+  </section>
+  </header>
+    <!-- end nav -->
+  
+    <section class="row scro-sec justify-content-between">
+      <div class="col-4 scro-sec-d scro-rel">
+        <p>First Choose your seat/s</p>
+      </div>
+      <div class="col-4 scro-sec-d" id="scrol_bg">
+        <p>Second Enter Data</p>
+      </div>
+      <div class="col-4" id="scrol2_bg">
+        <p style="margin: 13px 0;">Recipt</p>
+      </div>
+    </section>
+
+
+  <section class="container overflow-hidden">
+    <div class="row" id="plane-st">
+      <div class="col-xl-6 col-12 choose-sec shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <h1 class="text-center shadow-lg p-3 mb-5 rounded">We have a new way to Book train tickets</h1>
+        <h3 class="text-center shadow-lg p-3 mb-5 rounded">just click to spend a good time with a seat you choose</h3>
+        <button class="btn btn-primary" id="save" >click to continue</button>
+      </div>
+
+        <div class="plane col-xl-4 col-12 ">
+          <div class="cockpit">
+            <h1>Click to reserve a seat</h1>
+          </div>
+      <div class="exit exit--front fuselage">
+        
+      </div>
+      <ol class="cabin fuselage">
+        <li class="row row--1">
+          <ol class="seats" type="A">
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="1A" id="1A" />
+              <button>1A</button>
+            </li>
+            <li class="seat" style="left: 57%;">
+              <input type="hidden" value="1F" id="1F" style="position: fixed;" />
+              <button>1F</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--2">
+          <ol class="seats" type="A">
+            <li class="seat" style="left: 14%;">
+              <input type="hidden"  value="2A" id="2A" />
+              <button class="stop" disabled>2A</button>
+            </li>
+            <li class="seat" style="left: 57%;">
+              <input type="hidden" value="2F" id="2F" />
+              <button>2F</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--3">
+          <ol class="seats" type="A" style="border-bottom: 1px solid black;">
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="3A" id="3A" />
+              <button>3A</button>
+            </li>
+            <li class="seat" style="left: 57%;">
+              <input type="hidden" value="3F" id="3F" />
+              <button>3F</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--4">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="4B" id="4B" />
+              <button>4B</button>
+            </li>
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="4C" id="4C" class="dis"  />
+              <button>4C</button>
+            </li>
+            <li class="seat" style="left: 28.5%;">
+              <input type="hidden" value="4D" id="4D" class="dis"  />
+              <button>4D</button>
+            </li>
+            <li class="seat" style="left: 28%;">
+              <input type="hidden" value="4E" id="4E" />
+              <button>4E</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--5">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="5B" id="5B" />
+              <button>5B</button>
+            </li>
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="5C" id="5C" class="dis"  />
+              <button>5C</button>
+            </li>
+            <li class="seat" style="left: 28.5%;">
+              <input type="hidden" value="5D" id="5D" class="dis"  />
+              <button>5D</button>
+            </li>
+            <li class="seat" style="left: 28%;">
+              <input type="hidden" value="5E" id="5E" />
+              <button>5E</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--6">
+          <ol class="seats" type="A">
+            
+            <li class="seat">
+              <input type="hidden" value="6B" id="6B" />
+              <button>6B</button>
+            </li>
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="6C" id="6C" class="dis"  />
+              <button>6C</button>
+            </li>
+            <li class="seat" style="left: 28.5%;">
+              <input type="hidden" value="6D" id="6D" class="dis"  />
+              <button>6D</button>
+            </li>
+            <li class="seat" style="left: 28%;">
+              <input type="hidden" value="6E" id="6E" />
+              <button>6E</button>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--7">
+          <ol class="seats" type="A">
+            
+            <li class="seat">
+              <input type="hidden" value="7B" id="7B" />
+              <button>7B</button>
+            </li>
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="7C" id="7C" class="dis"  />
+              <button>7C</button>
+            </li>
+            <li class="seat" style="left: 28.5%;">
+              <input type="hidden" value="7D" id="7D" class="dis"  />
+              <button>7D</button>
+            </li>
+            <li class="seat" style="left: 28%;">
+              <input type="hidden" value="7E" id="7E" />
+              <button>7E</button>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--8">
+          <ol class="seats" type="A" style="border-bottom: 1px solid black;">
+            
+            <li class="seat">
+              <input type="hidden" value="8B" id="8B" />
+              <button>8B</button>
+            </li>
+            <li class="seat" style="left: 14%;">
+              <input type="hidden" value="8C" id="8C" class="dis"  />
+              <button>8C</button>
+            </li>
+            <li class="seat" style="left: 28.5%;">
+              <input type="hidden" value="8D" id="8D" class="dis"  />
+              <button>8D</button>
+            </li>
+            <li class="seat" style="left: 28%;">
+              <input type="hidden" value="8E" id="8E" />
+              <button>8E</button>
+            </li>
+            
+          </ol>
+        </li>
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="9A" id="9A" />
+              <button>9A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="9B" id="9B" />
+              <button>9B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="9C" id="9C" class="dis"  />
+              <button>9C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="9D" id="9D" class="dis"  />
+              <button>9D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="9E" id="9E" />
+              <button>9E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="9F" id="9F" />
+              <button>9F</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--10">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="10A" id="10A" />
+              <button>10A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="10B" id="10B" />
+              <button>10B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="10C" id="10C" class="dis"  />
+              <button>10C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="10D" id="10D" class="dis"  />
+              <button>10D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="10E" id="10E" />
+              <button>10E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="10F" id="10F" />
+              <button>10F</button>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="11A" id="9A" />
+              <button>11A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="11B" id="9B" />
+              <button>11B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="11C" id="9C" class="dis"  />
+              <button>11C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="11D" id="9D" class="dis"  />
+              <button>11D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="11E" id="9E" />
+              <button>11E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="11F" id="9F" />
+              <button>11F</button>
+            </li>
+          </ol>
+        </li>
+    
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="12A" id="9A" />
+              <button>12A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="12B" id="9B" />
+              <button>12B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="12C" id="9C" class="dis"  />
+              <button>12C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="12D" id="9D" class="dis"  />
+              <button>12D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="12E" id="9E" />
+              <button>12E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="12F" id="9F" />
+              <button>12F</button>
+            </li>
+          </ol>
+        </li>
+    
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="13A" id="9A" />
+              <button>13A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="13B" id="9B" />
+              <button>13B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="13C" id="9C" class="dis"  />
+              <button>13C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="13D" id="9D" class="dis"  />
+              <button>13D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="13E" id="9E" />
+              <button>13E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="13F" id="9F" />
+              <button>13F</button>
+            </li>
+          </ol>
+        </li>
+    
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="14A" id="9A" />
+              <button>14A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="14B" id="9B" />
+              <button>14B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="14C" id="9C" class="dis"  />
+              <button>14C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="14D" id="9D" class="dis"  />
+              <button>14D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="14E" id="9E" />
+              <button>14E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="14F" id="9F" />
+              <button>14F</button>
+            </li>
+          </ol>
+        </li>
+    
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="hidden" value="15A" id="9A" />
+              <button>15A</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="15B" id="9B" />
+              <button>15B</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="15C" id="9C" class="dis"  />
+              <button>15C</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="15D" id="9D" class="dis"  />
+              <button>15D</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="15E" id="9E" />
+              <button>15E</button>
+            </li>
+            <li class="seat">
+              <input type="hidden" value="15F" id="9F" />
+              <button>15F</button>
+            </li>
+          </ol>
+        </li>
+    
+      </ol>
+      <div class="exit exit--back fuselage">
+        
+      </div>
+    </div>
+
+    </div>
+    
+    <div class="col-12"id="form" style="display: none;">
+      <!-- form  -->
+    <form >
+        <p class="text-center fw-bold fs-5">Enter some info to continue</p>
+     
+        <div>
+          
+           <label for="name">Name</label>
+           <div class="input-group mb-1" style="z-index: 1;">
+            <span class="input-group-text"><i class="uil uil-user"></i>  </span>
+            <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+          </div>
+    
+            <label for="Age">Age</label>
+            <div class="input-group mb-1">
+              <span class="input-group-text"><i class="uil uil-list-ol"></i>  </span>
+              <input class="form-control" type="number" id="Age" placeholder="Enter Your Age" required>
+            </div>
+    
+           <label for="email">Email</label>
+              <div class="input-group mb-1">
+                <span class="input-group-text"><i class="uil uil-envelope"></i> </span>
+                <input class="form-control" type="email" id="email" placeholder="Enter Your Email" required> 
+              </div>
+        
+           <label for="phone">Phone</label>
+           <div class="input-group mb-1">
+            <span class="input-group-text"><i class="uil uil-dialpad-alt"></i>  </span>
+            <input class="form-control" type="number" id="Phone" placeholder="Enter Your Number" required>
+          </div>
+    
+          <label for="from">From</label>
+          <div class="input-group mb-1">
+           <span class="input-group-text"><i class="uil uil-plane-fly"></i>  </span>
+           <input type="text" class="form-control" id="from" placeholder="Enter Country Name" required>
+         </div>
+    
+         <label for="to">To</label>
+         <div class="input-group mb-1">
+          <span class="input-group-text"><i class="uil uil-plane-arrival"></i> </span>
+          <input type="text" class="form-control" id="to" placeholder="Enter Country Name" required>
+        </div>
+        
+           <label for="password">Travel Date</label>
+           <div class="input-group mb-1">
+            <span class="input-group-text"><i class="uil uil-calendar-alt"></i>  </span>
+            <input class="form-control" type="date" id="Travel_Date" placeholder="Travel Date" required>
+          </div>    
+          
+          </div>
+        
+          <p id="demo" style="color: red; font-size: large;"></p>
+        <button type="button" class="btn" id="form-btn1">Show Receipt</button>
+      </form>
+    
+      <!-- end form  -->
+    </div>
+    
+    <!-- partial -->
+    <div class="col-12 receipt" style="display: none;">
+    <p class="rec-sty">Receipt</p>
+    
+    
+    
+        
+    <div class="row border-bottom">
+    
+        <div class="col-xl-3 col-6">
+          <p>Name :</p>
+          <p>Age :</p>
+          <p>Email :</p>
+          <p>Phone :</p>
+          <p>Travel Date :</p>
+        </div>
+        <div class="col-xl-3 col-6">
+          <p id="fo-1"></p>
+          <p id="fo-2"></p>
+          <p id="fo-3"></p>
+          <p id="fo-4"></p>
+          <p id="fo-5"></p>
+        </div>
+    
+    
+        </div>
+    
+        <div id="shaping">
+          <p class="pr0"></p>
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col">Seat Num</th>
+                  <th scope="col">Total Seats</th>
+                  <th scope="col">Class</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody id="t-bod">
+                <tr id="cla-a"></tr>
+                <tr id="cla-b"></tr>
+                <tr id="cla-c"></tr>
+              </tbody>
+            </table>
+          </div>
+    
+        </div>
+    
+        <div class="summary-st row">
+          <h2 class="text-center">summary</h2>
+          <div class="col-6 text-center">
+            <p>From :</p>
+            <p>To :</p>
+            <p>Total Seats :</p>
+            <p>Total Price :</p>
+            <p>Tax :</p>
+          </div> 
+          <div class="col-6">
+            <p id="rec_from"></p>
+            <p id="rec_to"></p>
+            <p id="total_rec"></p>
+            <p id="total-pri"></p>
+            <p id="tax"></p>
+          </div> 
+        
+          <h3 id="all_total" class="text-center">total :</h3>
+        </div>    
+    
+    
+    
+    </div>
+    
+    
+    
+    </section>
+  <!-- sec 10 -->
+  <section id="Contact">
+    <div class="container">
+      <h2 class="dash-sty-rental text-center">
+        Contact US
+      </h2>
+      <div class="
+                    row
+                    justify-content-center
+                    align-items-center
+                    row-cols-1 row-cols-sm-2 row-cols-md-3
+                    gy-4
+                  ">
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-mobile-android"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Phone Number</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="tel:+201068268354">
+              (+20)-1068268354
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 ">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-location-arrow"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder title-font">
+              Address
+            </h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none"
+              href="https://www.google.com/maps?ll=30.038854,31.209204&amp;z=15&amp;t=m&amp;hl=en&amp;gl=EG&amp;mapclient=embed&amp;q=Al+Doqi+Dokki+Giza+Governorate"
+              target="_blank">
+              35 Al-Doky Street,<br>
+              5th floor, Doky, Giza</a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="text-center py-4 shadow border-3">
+            <i class="icon uil uil-envelope-open"></i>
+            <h4 class="card-title mt-3 mb-2 fw-bolder">Email Address</h4>
+            <a style="color: #99d6ff;" class="fs-5 fw-bold text-decoration-none" href="mailto:info@eraasoft.com" target="_blank">
+              info@eraasoft.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-lg-2 mt-5 align-items-center gy-4">
+        <div class="col-xl-6 col-12">
+          <h2 class="text-center text-md-start title-font fw-bolder">
+            Get In Touch
+          </h2>
+          <p class="mb-4 fs-5 fst-italic">
+            We are welcome to recieve your questions &amp; suggestions and our support team are ready
+            to help you.
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label visually-hidden">Name :</label>
+              <input type="text" class="form-control form-control-lg fst-italic" id="name" placeholder="Full Name.">
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label visually-hidden">User Email:</label>
+              <input type="email" class="form-control form-control-lg fst-italic" id="email"
+                placeholder="Email Address.">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label visually-hidden">Phone Number:</label>
+
+              <input type="tel" class="form-control form-control-lg fst-italic" id="phone" placeholder="Phone Number.">
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label visually-hidden">Message:</label>
+
+              <textarea type="tel" class="form-control form-control-lg fst-italic" id="message"
+                placeholder="Leave your message..."></textarea>
+            </div>
+
+            <button class="
+                          d-block
+                          w-50
+                          mx-auto
+                          btn btn-lg 
+                          text-uppercase text-light
+                          form-btn
+                        " type="submit">
+              submit now
+            </button>
+          </form>
+        </div>
+        <div class="col-xl-6 col-12">
+          <iframe class="
+                        contact__map
+                        shadow-lg
+                         border-4
+                         rounded-3
+                      "
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6038952537!2d31.328505268401845!3d30.059618470532715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1646814974310!5m2!1sar!2seg"
+             allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- end sec 10 -->
+
+  <!--#SECTION: Main END-->
+
+  <!--#SECTION: Footer Start-->
+  <footer class="py-3 container">
+
+      <div class=" flex-column flex-md-row d-flex justify-content-between  align-items-center">
+        <p class="mb-2 mb-md-0 fw-bold">
+          <span style="font-size: 30px; color: black;">©</span>2023 by MARKO. All rights reserved.
+        </p>
+
+        <div class="d-flex">
+          <img src="content/assest/sory.jpg" width="50" height="50" alt="marko pic" style="border-radius: 50%;">
+          <a class="social-icons__item__link" href="https://www.facebook.com/profile.php?id=100011002320781&mibextid=ZbWKwL" target="_blank">
+            <i class="uil uil-facebook-f"></i>
+          </a>
+  
+          <a class="social-icons__item__link" href="https://markosamh28@gmail.com" target="_blank">
+            <i class="uil uil-google"></i>
+          </a>
+  
+          <a class="social-icons__item__link" href="" target="_blank">
+            <i class="uil uil-twitter-alt"></i>
+          </a>
+          
+          <a class="social-icons__item__link" href="https://www.linkedin.com/in/marko-sameh-9971b6244" target="_blank">
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+        </div>
+      </div>
+    
+  </footer>
+  <!--#SECTION: Footer END-->
+  <script>
+  
+    var item1 = "";
+    var itemprice;
+    var tax;
+    var total_tax=0;
+    var all_total=0;
+    var sum = "";
+    var total = 0;
+    var count = 0;
+    var NumOfElem = 0;
+    var classes="";
+    var cl_a=0;
+    var cl_b=0;
+    var cl_c=0;
+
+    $(document).ready(function () {
+      $(window).scroll(function () { 
+        if($(window).scrollTop()>=100)
+        {$("nav").addClass("scrolnav");}
+        else
+        {$("nav").removeClass("scrolnav");};
+    });
+    
+    $(".nav-btn").click(function () { 
+        $(".nav-inp").toggle(600);
+        
+    });
+      // form
+    $("#form-btn1").click(function (e) { 
+  $(scrol2_bg).addClass("scro-rel");
+  if($("#name").val()==""||$("#Age").val()==""||$("#email").val()==""||$("#Phone").val()==""||
+  $("#Travel_Date").val()==""||$("#from").val()==""||$("#to").val()==""){
+      $("#demo").append("You Must Enter All Date");
+
+    }else{
+      $("#form").hide();
+      $(".receipt").show();
+      $("#form-btn1").append(`<i class="uil uil-check"></i>`);
+    }
+      $("#fo-1").text($("#name").val());
+      $("#fo-2").text($("#Age").val());
+      $("#fo-3").text($("#email").val());
+      $("#fo-4").text($("#Phone").val());
+      $("#fo-5").text($("#Travel_Date").val());
+      $(`#rec_from`).text($("#from").val());
+      $(`#rec_to`).text($("#to").val());
+    
+    });
+      // end form
+      // plane
+      $(".seat").each(function () {
+        var $button = $(this).find("button");
+        var $input = $(this).find("input");
+    
+        $button.click(function () {
+          for (let i = 0; i <= 3; i++) {
+              if($button.text()==`${i.toString()}A`||$button.text()==`${i.toString()}F`){
+                itemprice = 5000;
+                classes="class a";
+                tax=500;
+              }
+            }
+          for (let j = 4; j <= 8; j++) {
+              if($button.text()==`${j.toString()}B`||$button.text()==`${j.toString()}C`||
+              $button.text()==`${j.toString()}D`||$button.text()==`${j.toString()}E`){
+                itemprice = 2500;
+                classes="class b";
+                tax=250;
+              }
+            }
+          for (let k = 9; k <= 15; k++) {
+              if($button.text()==`${k.toString()}A`||$button.text()==`${k.toString()}B`||$button.text()==`${k.toString()}C`
+              ||$button.text()==`${k.toString()}D`||$button.text()==`${k.toString()}E`||$button.text()==`${k.toString()}F`){
+                itemprice = 1000;
+                classes="class c";
+                tax=100;
+              }
+            }
+          item1 = $input.val();
+          $($button).addClass("stop");
+          $($button).attr("id", `i${count}`);
+    
+          total += itemprice;
+          total_tax +=tax;
+          if(classes=="class a"){
+          sum = sum + item1;
+            if ($(`#cla-a`).is(':empty')){
+              cl_a++;
+              $(`#cla-a`).append(`
+                  <td scope="row" id="sen">${sum}</td>
+                  <td id="con">${cl_a}</td>
+                  <td id="a">${classes}</td>
+                  <td id="i_p_a">${itemprice*cl_a}</td>
+                `);
+          }else{
+              $(`#sen`).append(sum);
+              $(`#con`).text(cl_a);
+              $(`#i_p_a`).text(itemprice*cl_a);
+              $(`#a`).text(classes);
+            }
+            cl_a++;
+            sum = " ";
+          }
+          
+          if(classes=="class b"){
+            sum = sum + item1;
+            if ($(`#cla-b`).is(':empty')||sum==" "){
+              $(`#cla-b`).append(`
+                  <td scope="row" id="se">${sum}</td>
+                  <td id="co">${cl_b}</td>
+                  <td id="b">${classes}</td>
+                  <td id="i_p_b">${itemprice*cl_b}</td>
+                `);
+          cl_b++;
+            }else{
+              $(`#se`).append(sum);
+              $(`#co`).text(cl_b);
+              $(`#i_p_b`).text(itemprice*cl_b);
+              $(`#b`).text(classes);
+            }
+          cl_b++;
+          sum = " ";
+          }
+          
+          if(classes=="class c"){
+            sum = sum + item1;
+            if ($(`#cla-c`).is(':empty')||sum==" "){
+          cl_c++;
+              $(`#cla-c`).append(`
+                  <td scope="row" id="s">${sum}</td>
+                  <td id="c">${cl_c}</td>
+                  <td id="c_1">${classes}</td>
+                  <td id="i_p_c">${itemprice*cl_c}</td>
+                `);
+    
+            }else{
+              $(`#s`).append(sum);
+              $(`#c`).text(cl_c);
+              $(`#i_p_c`).text(itemprice*cl_c);
+              $(`#c_1`).text(classes);
+            }
+          cl_c++;
+          sum = " ";
+          }
+          NumOfElem++;
+        });
+      });
+      $("#save").click(function () {
+        $(scrol_bg).addClass("scro-rel");
+        let text = "Are U Sure";
+        if (confirm(text) == true) {
+         $("#tax").append(total_tax);
+         $("#total_rec").append(NumOfElem);
+         $("#total-pri").append(total);
+         $("#all_total").append(total+total_tax);
+          total = 0;
+          NumOfElem=0;
+    
+        } else {
+              $(`#sen`).text("     ");
+              $(`#se`).text("     ");
+              $(`#s`).text("     ");
+              $(`#con`).text("     ");
+              $(`#i_p_a`).text("     ");
+              $(`#a`).text("     ");
+              $(`#co`).text("     ");
+              $(`#i_p_b`).text("     ");
+              $(`#b`).text("     ");
+              $(`#c`).text("     ");
+              $(`#i_p_c`).text("     ");
+              $(`#c_1`).text("     ");
+    
+          const elements = document.querySelectorAll(`#i${count}`);
+          elements.forEach((element) => {
+            element.classList.remove("stop");
+          });
+          total = 0;
+          NumOfElem=0;
+        }
+        $("#plane-st").hide();
+        $("#form").show();
+      });
+      // end plane
+    
+    });
+    
+    </script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js" integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script> -->
+
+</body>
+</html>
